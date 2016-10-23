@@ -5,3 +5,4 @@
 ///<reference path="Templates.ts"/>
 ///<reference path="CameraControls.ts"/>
 ///<reference path="MainLoop.ts"/>
+///<reference path="Component.ts"/>
