@@ -25,7 +25,7 @@ class Component {
     public generateHTML: () => string = function() {
 
         var childString: string = this.children.reduce(function(previousValue, currentValue, currentIndex, array) {
-            return previousValue.generateHTML() + currentValue.generateHTML();
+            return previousValue + currentValue.generateHTML();
         },this.ownHTML);
 
         return generateDiv(childString,{"style":"width: " + this.w + "px; height: " + this.h + "px;" +
@@ -35,7 +35,40 @@ class Component {
 
     public setOwnHTML: (string) => void = function (html: string) {
         this.ownHTML = html;
-    }
+    };
+
+    public getWidth: () => number = function() {
+        return this.w;
+    };
+
+    public getHeight: () => number = function() {
+        return this.h;
+    };
+
+    public getParent: () => Component = function() {
+        return this.parent;
+    };
+
+    public relativeCoordinates: (Component) => number[] = function(c: Component) {
+        var a = [];
+        var x = 0;
+        var y = 0;
+        var z = 0;
+        var current = this;
+
+        while (current != c) {
+            x += current.x;
+            y += current.y;
+            z += current.z;
+            current = current.getParent();
+        }
+
+        a.push(x);
+        a.push(y);
+        a.push(z);
+
+        return a;
+    };
 }
 
 class Layer extends Component {
@@ -43,7 +76,7 @@ class Layer extends Component {
     public generateHTML: () => string = function() {
 
         var childString: string = this.children.reduce(function(previousValue, currentValue, currentIndex, array) {
-            return previousValue.generateHTML() + currentValue.generateHTML();
+            return previousValue + currentValue.generateHTML();
         },this.ownHTML);
 
         return generateDiv(childString,{"style":"width: " + this.w + "px; height: " + this.h + "px;" +

@@ -5,11 +5,13 @@ block scripts
     script(src="/javascripts/Templates.js")
     script(src="/javascripts/CameraControls.js")
     script(src="/javascripts/Component.js")
+    script(src="/javascripts/Connector.js")
     script(src="/javascripts/MainLoop.js")
 
 block content
     div(data-ng-app="activity3d")
         div.col-md-2.template-panel
             p Draggables go here
+            button(onclick="feature_test()") Test 3d creation
         div.col-md-10.canvas(data-ng-controller="CameraController")
             div.camera#camera(style="transform: rotateX({{cameraRotationX}}deg) rotateY({{cameraRotationY}}deg)")
