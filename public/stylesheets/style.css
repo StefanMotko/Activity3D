@@ -1,0 +1,43 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+.graph-element, .layer, .connector {
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 50%;
+  left: 50%; }
+
+.layer {
+  border: 2px solid black;
+  background-color: rgba(211, 211, 211, 0.5); }
+
+.canvas {
+  margin: auto;
+  width: 1280px;
+  height: 800px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: aliceblue;
+  border: 2px solid black; }
+
+.camera {
+  perspective: 0;
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%; }
+
+.template-panel {
+  height: 800px;
+  background-color: lightgray;
+  border: 2px solid black;
+  border-right: none; }
+
+.connector {
+  transform-origin: left center; }
+
+/*# sourceMappingURL=style.css.map */
