@@ -29,7 +29,9 @@ class Connector extends Component {
         },this.ownHTML);
 
         return generateDiv(childString,{"style":
-        "transform: translateX(" + this.parent.getWidth() * 0.5 * this.xpos + "px) translateY(" + ((this.parent.getHeight() * 0.5 * this.ypos) - 12) + "px) rotateZ(" + angle_xy + "rad) rotateY(" + angle + "rad)"
+        "transform: translateX(" + this.parent.getWidth() * 0.5 * this.xpos + "px) translateY(" +
+            ((this.parent.getHeight() * 0.5 * this.ypos) - 12) + "px) rotateZ(" + angle_xy + "rad) rotateY(" + angle +
+            "rad)"// + "rotate3d(" + dx + "," + dy + "," + dz + ",{{cameraRotationX}}rad)"
             ,"class":"connector"});
     };
 
