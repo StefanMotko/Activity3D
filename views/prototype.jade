@@ -11,7 +11,11 @@ block scripts
 block content
     div(data-ng-app="activity3d")
         div.col-md-2.template-panel
-            p Draggables go here
+            p Draggables will go here
+            p Use the arrow keys to rotate the display
+            p The Test 3d creation button will create an additional layer and place three components, one on the original layer, one on the new layer and one in front of the original layer
+            p Exact component types (i. e. action, decision block, ...) have not been implemented yet
+
             button(onclick="feature_test()") Test 3d creation
         div.col-md-10.canvas(data-ng-controller="CameraController")
             div.camera#camera(style="transform: rotateX({{cameraRotationX}}deg) rotateY({{cameraRotationY}}deg)")
