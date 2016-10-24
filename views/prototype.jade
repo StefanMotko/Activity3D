@@ -4,12 +4,12 @@ block scripts
     script(src="/javascripts/Header.js")
     script(src="/javascripts/Templates.js")
     script(src="/javascripts/CameraControls.js")
-    script(src="/javascripts/MainLoop.js")
     script(src="/javascripts/Component.js")
+    script(src="/javascripts/MainLoop.js")
 
 block content
     div(data-ng-app="activity3d")
-        div.col-md-2
+        div.col-md-2.template-panel
             p Draggables go here
         div.col-md-10.canvas(data-ng-controller="CameraController")
             div.camera#camera(style="transform: rotateX({{cameraRotationX}}deg) rotateY({{cameraRotationY}}deg)")

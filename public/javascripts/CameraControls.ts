@@ -5,10 +5,10 @@
 var cameraRotationX: number = -30;
 var cameraRotationY: number = 40;
 
-var rotateLeft: number = 2;
-var rotateRight: number = 2;
-var rotateUp: number = 2;
-var rotateDown: number = 2;
+var rotateLeft: number = 0;
+var rotateRight: number = 0;
+var rotateUp: number = 0;
+var rotateDown: number = 0;
 
 function handleKeyDown(e) {
     switch (e.keyCode) {

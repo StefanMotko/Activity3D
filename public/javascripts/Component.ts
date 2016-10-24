@@ -37,3 +37,18 @@ class Component {
         this.ownHTML = html;
     }
 }
+
+class Layer extends Component {
+
+    public generateHTML: () => string = function() {
+
+        var childString: string = this.children.reduce(function(previousValue, currentValue, currentIndex, array) {
+            return previousValue.generateHTML() + currentValue.generateHTML();
+        },this.ownHTML);
+
+        return generateDiv(childString,{"style":"width: " + this.w + "px; height: " + this.h + "px;" +
+        "transform: translate(-50%,-50%) translateX(" + this.x + "px) translateY(" + this.y + "px) translateZ(" + this.z + "px)"
+            ,"class":"layer"});
+    };
+
+}
